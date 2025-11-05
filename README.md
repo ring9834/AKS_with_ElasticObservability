@@ -157,8 +157,8 @@ Build Docker Image and push to registry.
 docker build -t https://app.docker.com/accounts/ring9834/elastic-apm-dotnet:latest .
 docker push https://app.docker.com/accounts/ring9834/elastic-apm-dotnet:latest
 ```
-```sh
 Deploy the App to AKS
+```sh
 apiVersion: apps/v1
 kind: Deployment
 metadata:
