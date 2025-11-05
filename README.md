@@ -34,7 +34,7 @@ az aks create \
 
 Connect kubectl
 
-get-credentials: Downloads the Kubernetes configuration (kubeconfig) file for your AKS cluster and merges it with your local ~/.kube/config file. This lets you use kubectl commands to manage your AKS cluster directly from your terminal.
+get-credentials: Downloads the Kubernetes configuration (kubeconfig) file for our AKS cluster and merges it with our local ~/.kube/config file. This lets we use kubectl commands to manage our AKS cluster directly from our terminal.
 ```sh
 az aks get-credentials --resource-group $RESOURCE_GROUP --name $CLUSTER_NAME
 ```
@@ -57,7 +57,7 @@ This will stream Azure resource logs and metrics automatically.
 
 Now, deploy Elastic Agent to collect cluster-level logs and metrics. The Elastic Agent runs as a DaemonSet, collecting logs, metrics, and traces from every node/pod.
 
-This command used to create a Secret object in your cluster to securely store your Elastic API key for use by pods or applications running inside Kubernetes.
+This command used to create a Secret object in our cluster to securely store our Elastic API key for use by pods or applications running inside Kubernetes.
 ```sh
 kubectl create secret generic elastic-credentials \
   --from-literal=api_key=" essu_U43kU1NWVmFiMEpCWjNkWFZWaHpWRFZEY89kwNlJWaFRTMGRHVWxVMWJuQTJNRE0zTTJsUGVFUkdRUT09AAAAAOzgMYM= "
@@ -120,8 +120,8 @@ Check that agents are running.
 ```sh
 kubectl get pods -n kube-system -l app=elastic-agent
 ```
-open Kibana → Observability → Overview in your Elastic Cloud console. 
-You’ll see Logs from Kubernetes pods; Metrics from AKS nodes; Azure Monitor resource metrics (VMs, storage, etc.); Traces.
+open Kibana → Observability → Overview in our Elastic Cloud console. 
+we’ll see Logs from Kubernetes pods; Metrics from AKS nodes; Azure Monitor resource metrics (VMs, storage, etc.); Traces.
 
 ## APM Tracing for App in AKS
 Make our ASP.NET Core Web API app to use the Elastic APM Agent. Modify Program.cs of our API service.
@@ -223,9 +223,13 @@ kubectl get svc cls-apm-service
 
 ## Set Alerts
 In Elastic Cloud, find through Observability → Alerts → Rules→Create rule. and Set:
+
 CPU > 80% for 5 min
+
 Memory > 90%
+
 Container restart count > 3
+
 Application error rate > 10%
 
 
