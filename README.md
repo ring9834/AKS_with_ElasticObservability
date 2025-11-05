@@ -1,4 +1,5 @@
 # Azure Monitor Combined with Elastic Observability
+This is an easy-to-follow example about how to integrate Elastic Observability with Azure Monitor. Combining Azure Monitor with Elastic Observability offers a powerful hybrid observability solution that unites native Azure telemetry with Elastic’s advanced analytics and visualization capabilities.
 
 ## Steps for sets up
 :dog:Create Azure Resources
